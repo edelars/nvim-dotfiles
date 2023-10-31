@@ -1,5 +1,5 @@
 vim.wo.number = true
-vim.wo.relativenumber = true
+vim.wo.relativenumber = false
 
 vim.g.did_load_filetypes = 1
 vim.g.formatoptions = "qrn1"
@@ -54,11 +54,4 @@ vim.opt.cmdheight=0
 
 vim.cmd([[highlight clear LineNr]])
 vim.cmd([[highlight clear SignColumn]])
-
-vim.api.nvim_create_autocmd("BufWritePre", {
-  desc = "Stop running auto compiler",
-  group = vim.api.nvim_create_augroup("GoFormat", { clear = false }),
-    pattern = "*.go",
-  callback = function() require('go.format').goimport() end,
-})
 

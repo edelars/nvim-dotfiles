@@ -1,7 +1,9 @@
 require("core.plugins")
 require("core.mapping")
 require("core.configs")
+require("core.autocmd")
 
+require("plugins.hop")
 require("plugins.gitsigns")
 require("plugins.autopairs")
 require("plugins.lsp_signature")

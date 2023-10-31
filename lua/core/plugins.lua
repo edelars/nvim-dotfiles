@@ -96,5 +96,10 @@ require("lazy").setup({
       -- require("luasnip.loaders.from_lua").load({ paths = "~/.snippets" })
     end
   },
+    -- Hop (Better Navigation)
+    {
+        "phaazon/hop.nvim",
+        lazy = true,
+    },
 }
 )

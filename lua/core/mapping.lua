@@ -7,6 +7,11 @@ vim.g.mapleader = " "
 -- vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
 vim.keymap.set('n', '<leader>/', ':CommentToggle<CR>')
 
+--MOVE IN INSERT
+vim.api.nvim_set_keymap('i', '<c-h>', '<Left>', { noremap = true })
+vim.api.nvim_set_keymap('i', '<c-j>', '<C-o>gj', { noremap = true })
+vim.api.nvim_set_keymap('i', '<c-k>', '<C-o>gk', { noremap = true })
+vim.api.nvim_set_keymap('i', '<c-l>', '<Right>', { noremap = true })
 
 --F LINE
 vim.keymap.set('n', '<F4>', ':wa <CR>')
@@ -20,6 +25,7 @@ vim.keymap.set({ 'n' }, '<Leader>k', function()
 
 
 
+vim.keymap.set('n', '<leader>p', function() require("lazy").home() end,{desc = "Lazy"})
 vim.keymap.set('n', '<leader>q', '<cmd>confirm q<cr>>',{desc = "Quit"})
 vim.keymap.set('n', '<leader>n', '<cmd>enew<cr>',{desc = "New file"})
 vim.keymap.set('n', '<leader>c', ':bw<cr>',{desc = "Close"})
@@ -41,16 +47,5 @@ vim.keymap.set('n', '<S-Tab>', ':BufferLineCyclePrev<CR>')
 vim.keymap.set('n', '<leader>o', ':Neotree float toggle<CR>')
 vim.keymap.set('n', '<leader>e', ':Neotree left toggle<CR>')
 vim.keymap.set('n', '<leader>g', ':Neotree float git_status<CR>')
-
-
-
-
--- Plugin Manager
--- maps.n["<leader>p"] = sections.p
--- maps.n["<leader>pi"] = { function() require("lazy").install() end, desc = "Plugins Install" }
--- maps.n["<leader>ps"] = { function() require("lazy").home() end, desc = "Plugins Status" }
--- maps.n["<leader>pS"] = { function() require("lazy").sync() end, desc = "Plugins Sync" }
--- maps.n["<leader>pu"] = { function() require("lazy").check() end, desc = "Plugins Check Updates" }
--- maps.n["<leader>pU"] = { function() require("lazy").update() end, desc = "Plugins Update" }
 
 
