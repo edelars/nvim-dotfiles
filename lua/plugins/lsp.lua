@@ -86,7 +86,7 @@ lspconfig.gopls.setup({
                 }
                 -- DISABLED: as it overlaps with `lvimuser/lsp-inlayhints.nvim`
                 -- init_options = {
-                --   usePlaceholders = true,
+                  -- usePlaceholders = true,
                 -- }
             }
             )
@@ -118,9 +118,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
         vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
 
         local opts = {buffer = ev.buf}
-        vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
+        -- vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
         vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-        vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
+        -- vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
         vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
         -- vim.keymap
         --     .set('n', '<Leader>sa', vim.lsp.buf.add_workspace_folder, opts)

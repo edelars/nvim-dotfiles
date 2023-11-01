@@ -1,6 +1,8 @@
 vim.g.mapleader = " "
 
 -- Navigation
+vim.api.nvim_set_keymap('n', '<C-k>', '<PageUp>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<C-j>', '<PageDown>', { noremap = true })
 -- vim.keymap.set('n', '<c-k>', ':wincmd k<CR>')
 -- vim.keymap.set('n', '<c-j>', ':wincmd j<CR>')
 -- vim.keymap.set('n', '<c-h>', ':wincmd h<CR>')

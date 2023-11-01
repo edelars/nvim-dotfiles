@@ -12,6 +12,19 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+    {
+  "utilyre/barbecue.nvim",
+  name = "barbecue",
+  version = "*",
+  dependencies = {
+    "SmiteshP/nvim-navic",
+    "nvim-tree/nvim-web-devicons", -- optional dependency
+  },
+  opts = {
+    -- configurations go here
+  },
+},
+{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
     {'neovim/nvim-lspconfig', lazy = false,},
     {'akinsho/toggleterm.nvim', version = "*", config = true},
     {

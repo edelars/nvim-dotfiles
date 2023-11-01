@@ -3,6 +3,7 @@ require("core.mapping")
 require("core.configs")
 require("core.autocmd")
 
+require("plugins.blankline")
 require("plugins.hop")
 require("plugins.gitsigns")
 require("plugins.autopairs")
