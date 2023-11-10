@@ -14,6 +14,10 @@ vim.opt.undofile = true
 vim.opt.shell = "/bin/zsh"
 vim.opt.showbreak = "↳"
 
+-- vim.g.gruvbox_material_background = 'medium'
+-- vim.g.gruvbox_material_foreground = 'mix'
+-- vim.cmd.colorscheme "gruvbox-material"
+
 -- Mouse
 vim.opt.mouse = "a"
 vim.opt.mousefocus = true

@@ -38,7 +38,8 @@ require("lazy").setup({
         "hrsh7th/cmp-nvim-lsp",
     }},
     {'terrortylor/nvim-comment'},
-	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+    -- {'sainnhe/gruvbox-material'},
+    { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 	{"folke/which-key.nvim"},
 	{'nvim-treesitter/nvim-treesitter'},
 	{
