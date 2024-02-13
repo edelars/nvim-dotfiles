@@ -21,8 +21,8 @@ require('dashboard').setup {
                 icon_hl = 'Title',
                 desc = 'Open tree',
                 desc_hl = 'String',
-                key = 'e',
-                keymap = 'SPC e',
+                key = 'o',
+                keymap = 'SPC o',
                 key_hl = 'Number',
                 action = ':Neotree float'
             }, {
@@ -55,6 +55,15 @@ require('dashboard').setup {
             }, {
                 icon = ' ',
                 icon_hl = 'Title',
+                desc = 'Projects',
+                desc_hl = 'String',
+                key = 'F12',
+                keymap = 'SPC p',
+                key_hl = 'Number',
+                action = ':Telescope projects'
+            }, {
+                icon = ' ',
+                icon_hl = 'Title',
                 desc = 'Quit',
                 desc_hl = 'String',
                 key = 'q',
@@ -62,6 +71,7 @@ require('dashboard').setup {
                 key_hl = 'Number',
                 action = ':q'
             }
+
 
 
         }

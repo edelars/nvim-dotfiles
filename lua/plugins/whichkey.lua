@@ -12,6 +12,8 @@ wk.register({
     -- o = {"Git status"},
     -- x = {"Close Buffer"},
     w = {"Save"},
+    z = {"Golang"},
+    g = {"Git status"},
     -- t = {name = "Terminal", f = {"Float terminal"}, h = {"Horizontal terminal"}},
     h = {"No highlight"},
     -- g = {name = "Git", b = "Branches", c = "Commits", s = "Status"},

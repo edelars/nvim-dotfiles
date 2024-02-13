@@ -9,4 +9,11 @@ vim.fn.sign_define("DiagnosticSignInfo",
 vim.fn.sign_define("DiagnosticSignHint",
                    {text = "", texthl = "DiagnosticSignHint"})
 
-require("neo-tree").setup({})
+require("neo-tree").setup({
+     sync_root_with_cwd = true,
+  respect_buf_cwd = true,
+  update_focused_file = {
+    enable = true,
+    update_root = true
+  },
+})
