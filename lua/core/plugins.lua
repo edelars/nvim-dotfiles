@@ -27,16 +27,17 @@ require("lazy").setup({
   },
 },
 { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
+    {'dgagn/diagflow.nvim',
+    -- event = 'LspAttach', This is what I use personnally and it works great
+    opts = {}},
     {'neovim/nvim-lspconfig', lazy = false,},
+    { 'bloznelis/before.nvim'},
     {'akinsho/toggleterm.nvim', version = "*", config = true},
     {
     'nvim-telescope/telescope.nvim', tag = '0.1.4',
     },
     {'windwp/nvim-autopairs'},
-    {'AckslD/nvim-neoclip.lua',lazy = false,requires = {
-        {'nvim-telescope/telescope.nvim'},
-    },
-  },
+    {'AckslD/nvim-neoclip.lua',lazy = false},
     {'lewis6991/gitsigns.nvim'},
     {'ray-x/lsp_signature.nvim'},
     {'hrsh7th/cmp-nvim-lsp'}, {'hrsh7th/cmp-buffer'}, {'hrsh7th/cmp-path'},
@@ -74,7 +75,6 @@ require("lazy").setup({
 	  build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
 	},
 	{"akinsho/bufferline.nvim", dependencies = {'nvim-tree/nvim-web-devicons'}},
-    {"nvim-pack/nvim-spectre", dependencies = {'nvim-lua/plenary.nvim'}},
 	 {
         'nvim-lualine/lualine.nvim',
         dependencies = {

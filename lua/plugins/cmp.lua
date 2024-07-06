@@ -32,11 +32,18 @@ cmp.setup({
             end
         end, {"i", "s"})
     }),
+       matching = {
+        disallow_fuzzy_matching = true,
+        disallow_fullfuzzy_matching = true,
+        disallow_partial_fuzzy_matching = true,
+        disallow_partial_matching = false,
+        disallow_prefix_unmatching = true,
+      },
     sources = cmp.config.sources({
-        { name = "luasnip" },
-        { name = "nvim_lsp", keyword_length = 1 },
-          { name = "nvim_lsp_signature_help" }, 
-          { name = "path" }, { name = "buffer" }, 
+        { name = "luasnip" , score = 45,},
+        { name = "nvim_lsp", keyword_length = 1, score = 40, },
+          { name = "nvim_lsp_signature_help", score = 35, }, 
+          { name = "path" }, { name = "buffer" , score = 20,}, 
           -- { name = "nvim_lua" },
       })
 })

@@ -3,7 +3,7 @@ require("core.mapping")
 require("core.configs")
 require("core.autocmd")
 
-require("plugins.nvim-spectre")
+require("plugins.before")
 require("plugins.neoclip")
 require("plugins.project")
 require("plugins.blankline")

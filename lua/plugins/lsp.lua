@@ -3,7 +3,7 @@ capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 -- Sntup language servers.
 local lspconfig = require('lspconfig')
 lspconfig.pyright.setup {}
-lspconfig.tsserver.setup {}
+-- lspconfig.tsserver.setup {}
 lspconfig.prismals.setup {}
 lspconfig.cssls.setup {
     capabilities = capabilities
@@ -87,8 +87,8 @@ lspconfig.gopls.setup({
                 -- DISABLED: as it overlaps with `lvimuser/lsp-inlayhints.nvim`
                 -- init_options = {
                   -- usePlaceholders = true,
-                -- }
-            }
+                    -- }
+                }
             )
 lspconfig.rust_analyzer.setup {
   settings = {

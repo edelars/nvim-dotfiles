@@ -6,20 +6,17 @@ vim.api.nvim_set_keymap('n', '<c-o>', ':Telescope neoclip<CR>', { noremap = true
 
 
 -- Navigation
-vim.api.nvim_set_keymap('n', '<C-k>', '<PageUp>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<C-j>', '<PageDown>', { noremap = true })
+local before = require('before')
+vim.keymap.set('n', '<C-h>', before.jump_to_last_edit, {})
+vim.keymap.set('n', '<C-l>', before.jump_to_next_edit, {})
+-- vim.api.nvim_set_keymap('n', '<C-k>', '<PageUp>', { noremap = true })
+-- vim.api.nvim_set_keymap('n', '<C-j>', '<PageDown>', { noremap = true })
 -- vim.keymap.set('n', '<c-k>', ':wincmd k<CR>')
 -- vim.keymap.set('n', '<c-j>', ':wincmd j<CR>')
 -- vim.keymap.set('n', '<c-h>', ':wincmd h<CR>')
 -- vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
 vim.keymap.set('n', '<leader>/', ':CommentToggle<CR>')
 vim.keymap.set('v', '<leader>/', ':CommentToggl<CR>')
---MOVE IN INSERT
-vim.api.nvim_set_keymap('i', '<c-h>', '<Left>', { noremap = true })
-vim.api.nvim_set_keymap('i', '<c-j>', '<C-o>gj', { noremap = true })
-vim.api.nvim_set_keymap('i', '<c-k>', '<C-o>gk', { noremap = true })
-vim.api.nvim_set_keymap('i', '<c-l>', '<Right>', { noremap = true })
-
 
 --F LINE
 vim.keymap.set('n', '<F4>', ':wa <CR>',{desc = "Save all"})
@@ -63,7 +60,4 @@ vim.keymap.set('n', '<leader>zf', ':GoFillStruct<CR>', {desc = 'Fill struct'})
 vim.keymap.set('n', '<leader>zr', ':GoGenReturn:<CR>', {desc = 'Generate return value'})
 vim.keymap.set('n', '<leader>zb', ':GoAddTag<CR>', {desc = 'Add tags for struct'})
 vim.keymap.set('n', '<leader>zn', ':GoRmTag<CR>', {desc = 'Remove all tags for struct'})
-
--- spectre
-vim.keymap.set('n', '<leader>fs', '<cmd>lua require("spectre").toggle()<CR>', {desc = "Toggle Spectre search"})
 
