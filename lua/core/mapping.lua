@@ -20,9 +20,9 @@ vim.keymap.set('v', '<leader>/', ':CommentToggl<CR>')
 
 --F LINE
 vim.keymap.set('n', '<F4>', ':wa <CR>',{desc = "Save all"})
-vim.keymap.set('n', '<F6>', ':wa <cr> :GoTest <cr>',{desc = "Run test"})
+-- vim.keymap.set('n', '<F6>', ':wa <cr> :GoTest <cr>',{desc = "Run test"})
 vim.keymap.set('n', '<F7>', '<cmd>ToggleTerm<cr>',{desc = "ToggleTerm"})
-vim.keymap.set('n', '§', ':GoFillStruct <cr>')
+-- vim.keymap.set('n', '§', ':GoFillStruct <cr>')
 vim.keymap.set('n', '<F12>', ':Telescope projects<cr>',{desc = "Telescope Projects"})
 
 vim.keymap.set({ 'n' }, '<Leader>k', function()
@@ -30,6 +30,9 @@ vim.keymap.set({ 'n' }, '<Leader>k', function()
     end, { silent = true, noremap = true, desc = 'toggle signature' })
 
 
+vim.keymap.set('n', '<leader>w', ':wa <CR>',{desc = "Save all"})
+
+vim.keymap.set('n', '<leader>t', '<cmd>ToggleTerm<cr>',{desc = "ToggleTerm"})
 
 vim.keymap.set('n', '<leader>p', function() require("lazy").home() end,{desc = "Lazy"})
 vim.keymap.set('n', '<leader>q', '<cmd>confirm q<cr>>',{desc = "Quit"})
