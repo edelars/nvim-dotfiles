@@ -48,3 +48,4 @@ require('gitsigns').setup {
     
   end
 }
+

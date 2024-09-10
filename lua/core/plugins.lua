@@ -26,6 +26,12 @@ require("lazy").setup({
     -- configurations go here
   },
 },
+{
+  "maxandron/goplements.nvim",
+  ft = "go",
+  opts = {
+  },
+},
 { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
     {'dgagn/diagflow.nvim',
     -- event = 'LspAttach', This is what I use personnally and it works great
