@@ -10,7 +10,7 @@ lspconfig.cssls.setup {
 }
 lspconfig.gopls.setup({
         on_attach = function(client, bufnr)
-                    require("shared/lsp")(client, bufnr)
+                    -- require("shared/lsp")(client, bufnr)
                     require("lsp-inlayhints").setup({
                         inlay_hints = {type_hints = {prefix = "=> "}}
                     })

@@ -12,6 +12,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+    {"lvimuser/lsp-inlayhints.nvim"},
+    {"rrethy/vim-illuminate"},
     { "ahmedkhalf/project.nvim",
     lazy = false,},
 {
