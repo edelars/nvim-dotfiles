@@ -3,6 +3,8 @@ require("core.mapping")
 require("core.configs")
 require("core.autocmd")
 
+require("plugins.formatter")
+require("plugins.tailwind")
 require("plugins.before")
 require("plugins.neoclip")
 require("plugins.project")
