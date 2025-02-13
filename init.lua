@@ -26,3 +26,4 @@ require("plugins.lsp")
 require("plugins.telescope")
 require("plugins.toggleterm")
 require("plugins.dashboard")
+

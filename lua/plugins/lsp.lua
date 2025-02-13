@@ -13,6 +13,18 @@ lspconfig.prismals.setup({})
 lspconfig.cssls.setup({
 	capabilities = capabilities,
 })
+lspconfig.volar.setup({
+	-- add filetypes for typescript, javascript and vue
+	filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
+	-- filetypes = { "vue" },
+
+	init_options = {
+		vue = {
+			-- disable hybrid mode
+			hybridMode = false,
+		},
+	},
+})
 lspconfig.gopls.setup({
 	on_attach = function(client, bufnr)
 		-- require("shared/lsp")(client, bufnr)

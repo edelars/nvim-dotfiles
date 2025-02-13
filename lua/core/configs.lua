@@ -26,7 +26,7 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 
 -- Splits
-vim.opt.splitbelow = true
+vim.opt.splitbelow = false
 vim.opt.splitright = true
 
 -- Clipboard

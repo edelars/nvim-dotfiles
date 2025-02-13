@@ -2,7 +2,7 @@ vim.g.mapleader = " "
 
 --neoclip
 vim.api.nvim_set_keymap("i", "<c-o>", "<cmd>:Telescope neoclip<CR>", {})
-vim.api.nvim_set_keymap("n", "<c-o>", ":Telescope neoclip<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>p", ":Telescope neoclip<CR>", { noremap = true,desc = "Clipboard manager"  })
 
 -- Navigation
 local before = require("before")
@@ -32,7 +32,7 @@ vim.keymap.set("n", "<leader>w", ":wa <CR>", { desc = "Save all" })
 
 vim.keymap.set("n", "<leader>t", "<cmd>ToggleTerm<cr>", { desc = "ToggleTerm" })
 
-vim.keymap.set("n", "<leader>p", function()
+vim.keymap.set("n", "<leader>v", function()
 	require("lazy").home()
 end, { desc = "Lazy" })
 vim.keymap.set("n", "<leader>q", "<cmd>confirm q<cr>>", { desc = "Quit" })

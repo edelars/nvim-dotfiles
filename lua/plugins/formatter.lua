@@ -14,6 +14,7 @@ require("formatter").setup({
 		javascriptreact = formatter_prettier,
 		typescript = formatter_prettier,
 		typescriptreact = formatter_prettier,
+		["*.js"] = formatter_prettier,
 
 		-- Formatter configurations for filetype "lua" go here
 		-- and will be executed in order
@@ -45,21 +46,58 @@ require("formatter").setup({
 			end,
 		},
 
-		-- vim.api.nvim_create_augroup('BufWritePreFormatter', {})
-		-- vim.api.nvim_create_autocmd('BufWritePre', {
-		--   command = 'FormatWrite',
-		--   group = 'BufWritePreFormatter',
-		--   pattern = { '*.js', '*.jsx', '*.ts', '*.tsx'},
-		-- })
+		markdown = {
+			function()
+				return {
+					exe = "mdformat",
+					args = {
+						"-",
+					},
+					stdin = true,
+				}
+			end,
+		},
+		sh = {
+			function()
+				return {
+					exe = "shfmt",
+					args = {
+						"-",
+					},
+					stdin = true,
+				}
+			end,
+		},
+		yaml = {
+			function()
+				return {
+					exe = "yamlfmt",
+					args = {
+						"-in",
+					},
+					stdin = true,
+				}
+			end,
+		},
+		sql = {
+			function()
+				return {
+					exe = "sqlfluff",
+					args = {
+						"format",
+						"--disable-progress-bar",
+						"--nocolor",
+						"--dialect postgres",
+						"-",
+					},
+					stdin = true,
+					ignore_exitcode = false,
+				}
+			end,
+		},
 
-		-- Use the special "*" filetype for defining formatter configurations on
-		-- any filetype
 		["*"] = {
-			-- "formatter.filetypes.any" defines default configurations for any
-			-- filetype
 			require("formatter.filetypes.any").remove_trailing_whitespace,
-			-- Remove trailing whitespace without 'sed'
-			-- require("formatter.filetypes.any").substitute_trailing_whitespace,
 		},
 	},
 })

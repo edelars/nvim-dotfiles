@@ -28,6 +28,7 @@ require("lazy").setup({
 	},
 	{
 		"mhartington/formatter.nvim",
+		lazy = true,
 		ft = { "javascript", "javascriptreact", "typescript", "typescriptreact", "lua" },
 	},
 	{
@@ -168,7 +169,7 @@ require("lazy").setup({
 			},
 		},
 		config = function()
-			require("luasnip.loaders.from_vscode").lazy_load()
+			require("luasnip.loaders.from_vscode").lazy_load({ paths = { "~/.snippets" } })
 			require("luasnip.loaders.from_lua").load({ paths = "~/.snippets" })
 		end,
 	},
