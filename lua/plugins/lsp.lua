@@ -14,10 +14,7 @@ lspconfig.cssls.setup({
 	capabilities = capabilities,
 })
 lspconfig.volar.setup({
-	-- add filetypes for typescript, javascript and vue
-	filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
-	-- filetypes = { "vue" },
-
+	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
 	init_options = {
 		vue = {
 			-- disable hybrid mode
@@ -27,11 +24,10 @@ lspconfig.volar.setup({
 })
 lspconfig.gopls.setup({
 	on_attach = function(client, bufnr)
+        vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+		-- vim.lsp.buf.inlay_hint(bufnr, true)
+        -- vim.lsp.inlay_hint(bufnr, true)
 		-- require("shared/lsp")(client, bufnr)
-		require("lsp-inlayhints").setup({
-			inlay_hints = { type_hints = { prefix = "=> " } },
-		})
-		require("lsp-inlayhints").on_attach(client, bufnr)
 		require("illuminate").on_attach(client)
 
 		vim.api.nvim_create_autocmd({ "BufWritePost" }, {
@@ -95,9 +91,9 @@ lspconfig.gopls.setup({
 		},
 	},
 	-- DISABLED: as it overlaps with `lvimuser/lsp-inlayhints.nvim`
-	-- init_options = {
-	-- usePlaceholders = true,
-	-- }
+	init_options = {
+		usePlaceholders = true,
+	},
 })
 lspconfig.rust_analyzer.setup({
 	settings = {

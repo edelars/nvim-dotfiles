@@ -43,6 +43,7 @@ cmp.setup({
 		{ name = "luasnip", score = 45 },
 		{ name = "nvim_lsp", keyword_length = 1, score = 40 },
 		{ name = "nvim_lsp_signature_help", score = 35 },
+         -- { name = "vsnip" },
 		{ name = "path" },
 		{ name = "buffer", score = 20 },
 		-- { name = "nvim_lua" },

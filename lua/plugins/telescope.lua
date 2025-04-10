@@ -6,9 +6,9 @@ vim.keymap.set("n", "<leader>fd", builtin.diagnostics, {})
 
 -- vim.keymap.set('n', '<Tab>', builtin.buffers, {})
 vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
-vim.keymap.set("n", "<leader>gb", builtin.git_branches, {})
-vim.keymap.set("n", "<leader>gc", builtin.git_commits, {})
-vim.keymap.set("n", "<leader>gs", builtin.git_status, {})
+vim.keymap.set("n", "<leader>gb", builtin.git_branches, {desc = "git branches" })
+vim.keymap.set("n", "<leader>gc", builtin.git_commits, {desc = "git commits" })
+vim.keymap.set("n", "<leader>gs", builtin.git_status, {desc = "git status" })
 vim.keymap.set("n", "<leader>ls", builtin.lsp_document_symbols, {})
 
 vim.keymap.set("n", "gi", builtin.lsp_implementations, { noremap = true, silent = true, desc = "Find implementations" })

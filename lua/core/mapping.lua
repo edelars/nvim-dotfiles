@@ -56,10 +56,4 @@ vim.keymap.set("n", "<leader>e", ":Neotree left toggle<CR>")
 vim.keymap.set("n", "<leader>gm", ":Neotree float git_status<CR>")
 
 -- vim.keymap.set('n', '<leader>g', {desc = "asdasd"})
-vim.keymap.set("n", "<leader>zt", ":GoAddTest<CR>", { desc = "Add test for function" })
-vim.keymap.set("n", "<leader>zf", ":GoFillStruct<CR>", { desc = "Fill struct" })
-vim.keymap.set("n", "<leader>zr", ":GoGenReturn:<CR>", { desc = "Generate return value" })
-vim.keymap.set("n", "<leader>zb", ":GoAddTag<CR>", { desc = "Add tags for struct" })
-vim.keymap.set("n", "<leader>zn", ":GoRmTag<CR>", { desc = "Remove all tags for struct" })
-
 vim.keymap.set("n", "<leader>b", ":Format<CR>", { desc = "Format lines" })

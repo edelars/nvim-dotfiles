@@ -1,7 +1,11 @@
 require("nvim-autopairs").setup({
 	check_ts = true,
-	enable_check_bracket_line = false,
-	map_bs = false,
+	enable_moveright = true,
+	enable_afterquote = true, -- add bracket pairs after quote
+	enable_check_bracket_line = true, --- check bracket in same line
+	enable_bracket_in_quote = true, --
+	enable_abbr = false, -- trigge
+	map_bs = true,
 })
 
 -- If you want insert `(` after select function or method item

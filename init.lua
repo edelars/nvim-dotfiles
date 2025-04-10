@@ -21,9 +21,10 @@ require("plugins.whichkey")
 require("plugins.buffline")
 require("plugins.lualine")
 require("plugins.cmp")
-require("plugins.go")
 require("plugins.lsp")
 require("plugins.telescope")
 require("plugins.toggleterm")
 require("plugins.dashboard")
+require("plugins.todo")
+
 
