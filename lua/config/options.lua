@@ -1,5 +1,8 @@
-vim.wo.number = true
-
+-- Options are automatically loaded before lazy.nvim startup
+-- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
+-- Add any additional options here
+-- vim.wo.number = true
+vim.cmd("filetype on")
 vim.g.did_load_filetypes = 1
 vim.g.formatoptions = "qrn1"
 vim.opt.showmode = false
@@ -57,3 +60,4 @@ vim.opt.cmdheight = 0
 
 vim.cmd([[highlight clear LineNr]])
 vim.cmd([[highlight clear SignColumn]])
+
