@@ -19,6 +19,10 @@ vim.keymap.set("n", "<leader>/", ":normal gcc<CR><DOWN>", { desc = "[/] Toggle c
 -- gc - toggles comment
 -- <CR> sends the command
 vim.keymap.set("v", "<leader>/", "<Esc>:normal gvgc<CR>", { desc = "[/] Toggle comment block" })
+vim.keymap.set({ "v", "n", "i" }, "<F6>", function()
+  Snacks.terminal()
+end, { desc = "Terminal (cwd)" })
+
 -- vim.keymap.set("n", "<leader>/", "<cmd>normal gcc<cr>fa<bs>", { desc = "CommentToggle" })
 
 --neoclip

@@ -29,17 +29,28 @@ return {
         desc = "toggle signature",
         mode = "n",
       },
+      {
+        "gm",
+        function()
+          vim.lsp.buf.format()
+          -- vim.lsp.buf.formatting()
+        end,
+        silent = true,
+        noremap = true,
+        desc = "Format code with lsp",
+        mode = "n",
+      },
     },
 
-    config = function(_, opts)
-      local lspconfig = require("lspconfig")
-      for server, config in pairs(opts.servers) do
-        -- passing config.capabilities to blink.cmp merges with the capabilities in your
-        -- `opts[server].capabilities, if you've defined it
-        config.capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities)
-        lspconfig[server].setup(config)
-      end
-    end,
+    -- config = function(_, opts)
+    --   local lspconfig = require("lspconfig")
+    --   for server, config in pairs(opts.servers) do
+    --     -- passing config.capabilities to blink.cmp merges with the capabilities in your
+    --     -- `opts[server].capabilities, if you've defined it
+    --     config.capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities)
+    --     lspconfig[server].setup(config)
+    --   end
+    -- end,
 
     -- example calling setup directly for each LSP
     config = function()
@@ -74,7 +85,7 @@ return {
           -- vim.lsp.inlay_hint(bufnr, true)
           -- require("shared/lsp")(client, bufnr)
           require("illuminate").on_attach(client)
-          require("lsp_signature").on_attach(signature_setup, bufnr)
+          -- require("lsp_signature").on_attach(signature_setup, bufnr)
 
           vim.api.nvim_create_autocmd({ "BufWritePost" }, {
             group = vim.api.nvim_create_augroup("FixGoImports", { clear = true }),
@@ -129,9 +140,9 @@ return {
             --
             -- See also my longer explanation of issues here:
             -- https://github.com/golangci/golangci-lint/issues/741#issuecomment-1488116634
-            usePlaceholders = true,
+            usePlaceholders = false,
             hints = {
-              assignVariableTypes = true,
+              assignVariableTypes = false,
               compositeLiteralFields = true,
               compositeLiteralTypes = true,
               constantValues = true,

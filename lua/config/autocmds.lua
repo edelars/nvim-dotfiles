@@ -67,3 +67,31 @@ vim.api.nvim_create_autocmd({ "Filetype" }, {
     end
   end,
 })
+
+vim.api.nvim_create_autocmd("User", {
+  pattern = "OilEnter",
+  callback = vim.schedule_wrap(function(args)
+    local oil = require("oil")
+    if vim.api.nvim_get_current_buf() == args.data.buf and oil.get_cursor_entry() then
+      oil.open_preview()
+    end
+  end),
+})
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+  desc = "Perform autoformat the code",
+  group = vim.api.nvim_create_augroup("ScalaFormat", { clear = false }),
+  pattern = "*.scala",
+  callback = function() --vim.cmd('silent! GoFmt')
+    vim.lsp.buf.format()
+  end,
+})
+
+vim.api.nvim_create_autocmd("InsertLeave", {
+  desc = "Perform autoformat the code 2",
+  group = vim.api.nvim_create_augroup("ScalaFormat", { clear = false }),
+  pattern = "*.scala",
+  callback = function() --vim.cmd('silent! GoFmt')
+    vim.lsp.buf.format()
+  end,
+})

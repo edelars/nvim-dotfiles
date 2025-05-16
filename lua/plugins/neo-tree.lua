@@ -11,9 +11,6 @@ return {
     lazy = false, -- neo-tree will lazily load itself
     ---@module "neo-tree"
     ---@type neotree.Config?
-    opts = {
-      -- fill any relevant options here
-    },
 
     -- -- NeoTree
     -- vim.keymap.set({ "n" }, "<leader>i", function()
@@ -29,7 +26,7 @@ return {
     -- vim.keymap.set("n", "<leader>gm", ":Neotree float git_status<CR>")
     keys = {
       {
-        "<leader>o",
+        "<F8>",
         ":Neotree float toggle<CR>",
         mode = "n",
         noremap = true,
@@ -50,7 +47,7 @@ return {
         silent = true,
       },
     },
-    opts = function(_, opts)
+    opts = function()
       vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
 
       vim.fn.sign_define("DiagnosticSignError", { text = " ", texthl = "DiagnosticSignError" })

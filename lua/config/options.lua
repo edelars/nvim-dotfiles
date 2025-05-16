@@ -2,6 +2,8 @@
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
 -- vim.wo.number = true
+vim.g.snacks_animate = true
+vim.g.root_spec = { "lsp", { ".git", "lua" }, "cwd" }
 vim.cmd("filetype on")
 vim.g.did_load_filetypes = 1
 vim.g.formatoptions = "qrn1"
@@ -47,17 +49,24 @@ vim.opt.smartindent = true
 
 -- Fillchars
 vim.opt.fillchars = {
-	vert = "│",
-	fold = "⠀",
-	eob = " ", -- suppress ~ at EndOfBuffer
-	-- diff = "⣿", -- alternatives = ⣿ ░ ─ ╱
-	msgsep = "‾",
-	foldopen = "▾",
-	foldsep = "│",
-	foldclose = "▸",
+  vert = "│",
+  fold = "⠀",
+  eob = " ", -- suppress ~ at EndOfBuffer
+  -- diff = "⣿", -- alternatives = ⣿ ░ ─ ╱
+  msgsep = "‾",
+  foldopen = "▾",
+  foldsep = "│",
+  foldclose = "▸",
 }
 vim.opt.cmdheight = 0
 
 vim.cmd([[highlight clear LineNr]])
 vim.cmd([[highlight clear SignColumn]])
 
+vim.g.neovide_position_animation_length = 0
+vim.g.neovide_cursor_animation_length = 0.00
+vim.g.neovide_cursor_trail_size = 0
+vim.g.neovide_cursor_animate_in_insert_mode = false
+vim.g.neovide_cursor_animate_command_line = false
+vim.g.neovide_scroll_animation_far_lines = 0
+vim.g.neovide_scroll_animation_length = 0.00

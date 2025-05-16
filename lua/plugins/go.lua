@@ -10,11 +10,6 @@ return {
       "mfussenegger/nvim-dap",
     },
     config = function()
-      -- vim.keymap.set("n", "<leader>zt", ":GoAddTest<CR>", { desc = "Add test for function" })
-      -- vim.keymap.set("n", "<leader>zf", ":GoFillStruct<CR>", { desc = "Fill struct" })
-      -- vim.keymap.set("n", "<leader>zr", ":GoGenReturn:<CR>", { desc = "Generate return value" })
-      -- vim.keymap.set("n", "<leader>zb", ":GoAddTag<CR>", { desc = "Add tags for struct" })
-      -- vim.keymap.set("n", "<leader>zn", ":GoRmTag<CR>", { desc = "Remove all tags for struct" })
       require("go").setup({
         verbose = false,
         lsp_semantic_highlights = true, -- use highlights from gopls
