@@ -3,9 +3,9 @@ vim.keymap.del("n", "<leader>/")
 
 vim.keymap.set("n", "<leader>/", ":normal gcc<CR><DOWN>", { desc = "[/] Toggle comment line" })
 vim.keymap.set("v", "<leader>/", "<Esc>:normal gvgc<CR>", { desc = "[/] Toggle comment block" })
-vim.keymap.set({ "v", "n", "i" }, "<F6>", function()
-  Snacks.terminal()
-end, { desc = "Terminal (cwd)" })
+-- vim.keymap.set({ "v", "n", "i" }, "<F6>", function()
+--   Snacks.terminal()
+-- end, { desc = "Terminal (cwd)" })
 
 --F LINE
 vim.keymap.set("n", "<F4>", "<cmd>wa <CR>", { desc = "Save all" })

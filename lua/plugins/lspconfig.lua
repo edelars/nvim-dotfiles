@@ -59,12 +59,12 @@ return {
 
       lspconfig["lua_ls"].setup({ capabilities = capabilities })
       lspconfig.basedpyright.setup({})
-      lspconfig.ts_ls.setup({
-        on_attach = function(client)
-          client.server_capabilities.documentFormattingProvider = false
-          client.server_capabilities.documentRangeFormattingProvider = false
-        end,
-      })
+      -- lspconfig.ts_ls.setup({
+      --   on_attach = function(client)
+      --     client.server_capabilities.documentFormattingProvider = false
+      --     client.server_capabilities.documentRangeFormattingProvider = false
+      --   end,
+      -- })
       lspconfig.prismals.setup({})
       lspconfig.cssls.setup({
         capabilities = capabilities,

@@ -95,3 +95,21 @@ vim.api.nvim_create_autocmd("InsertLeave", {
     vim.lsp.buf.format()
   end,
 })
+
+-- Show errors and warnings in a floating window
+vim.api.nvim_create_autocmd("CursorHold", {
+  callback = function()
+    vim.diagnostic.open_float({
+      focusable = false,
+      source = "if_many",
+      scope = "cursor",
+      close_events = {
+        "CursorMoved",
+        "CursorMovedI",
+        "BufHidden",
+        "InsertCharPre",
+        "WinLeave",
+      },
+    })
+  end,
+})
