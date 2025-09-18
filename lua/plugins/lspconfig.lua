@@ -6,7 +6,7 @@ return {
     -- example using `opts` for defining servers
     opts = {
       servers = {
-        lua_ls = {},
+        -- lua_ls = {},
       },
     },
     -- vim.keymap.set("n", "<leader>lD", vim.diagnostic.open_float)
@@ -57,7 +57,6 @@ return {
       local capabilities = require("blink.cmp").get_lsp_capabilities()
       local lspconfig = require("lspconfig")
 
-      lspconfig["lua_ls"].setup({ capabilities = capabilities })
       lspconfig.basedpyright.setup({})
       -- lspconfig.ts_ls.setup({
       --   on_attach = function(client)
@@ -78,6 +77,34 @@ return {
           },
         },
       })
+      lspconfig.lua_ls.setup({
+        on_attach = on_attach,
+        capabilities = capabilities,
+        settings = {
+          Lua = {
+            runtime = {
+              -- Tell the language server which version of Lua you're using (e.g., 'LuaJIT' for Neovim)
+              version = "LuaJIT",
+            },
+            diagnostics = {
+              -- Get the language server to recognize the `vim` global for Neovim configuration
+              globals = { "vim" },
+            },
+            workspace = {
+              -- Make the server aware of Neovim runtime files for better completion and diagnostics
+              library = vim.api.nvim_get_runtime_file("", true),
+            },
+            telemetry = {
+              enable = false, -- Disable telemetry
+            },
+          },
+        },
+        -- You can add more configurations here, like on_attach for keybindings
+        -- on_attach = function(client, bufnr)
+        --     -- Example: Set up keybindings for LSP actions
+        --     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { buffer = bufnr, desc = 'Go to definition' })
+        -- end,
+      })
       lspconfig.gopls.setup({
         on_attach = function(client, bufnr)
           vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
@@ -92,13 +119,13 @@ return {
             pattern = "*.go",
             callback = function()
               -- ensure imports are sorted and grouped correctly
-              local params = vim.lsp.util.make_range_params()
-              params.context = { only = { "source.organizeImports" } }
+              -- local params = vim.lsp.util.make_range_params(0, "utf-8")
+              -- params.context = { only = { "source.organizeImports" } }
               local result = vim.lsp.buf_request_sync(0, "textDocument/codeAction", params)
               for _, res in pairs(result or {}) do
                 for _, r in pairs(res.result or {}) do
                   if r.edit then
-                    vim.lsp.util.apply_workspace_edit(r.edit, "UTF-8")
+                    vim.lsp.util.apply_workspace_edit(r.edit, "utf-8")
                   else
                     vim.lsp.buf.execute_command(r.command)
                   end

@@ -36,8 +36,12 @@ return {
 
       -- (Default) Only show the documentation popup when manually triggered
       completion = {
+        list = { selection = { preselect = false, auto_insert = true } },
         documentation = { auto_show = true },
+        ghost_text = { enabled = true, show_with_menu = false },
+        keyword = { range = "full" },
         menu = {
+          auto_show = true,
           draw = {
             treesitter = { "lsp" },
             padding = { 1, 1 }, -- padding only on right side
@@ -49,8 +53,9 @@ return {
       -- Default list of enabled providers defined so that you can extend it
       -- elsewhere in your config, without redefining it, due to `opts_extend`
       sources = {
-        default = { "lsp", "path", "snippets", "buffer" },
+        default = { "lsp", "snippets", "buffer", "path" },
       },
+      -- signature = { enabled = true },
 
       -- (Default) Rust fuzzy matcher for typo resistance and significantly better performance
       -- You may use a lua implementation instead by using `implementation = "lua"` or fallback to the lua implementation,
@@ -63,6 +68,7 @@ return {
           "exact",
           -- defaults
           "score",
+          "label",
           "sort_text",
         },
       },

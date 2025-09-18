@@ -4,7 +4,7 @@ return {
     -- TODO optional for icon support
     -- dependencies = { "nvim-tree/nvim-web-devicons" },
     -- or if using mini.icons/mini.nvim
-    dependencies = { "echasnovski/mini.icons" },
+    dependencies = { "nvim-mini/mini.icons" },
     opts = {},
     keys = {
       {

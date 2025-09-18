@@ -1,14 +1,15 @@
 return {
   {
-    "williamboman/mason-lspconfig.nvim",
+    "mason-org/mason-lspconfig.nvim",
     lazy = false,
     opts = {
       auto_install = true,
+      ensure_installed = { "lua_ls" },
     },
   },
 
   {
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     lazy = false,
     config = function()
       require("mason").setup()
