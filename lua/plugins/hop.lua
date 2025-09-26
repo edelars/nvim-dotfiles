@@ -1,21 +1,12 @@
 return {
   {
-    "phaazon/hop.nvim",
+    "smoka7/hop.nvim",
     lazy = true,
-    opts = function(_, opts)
-      require("hop").setup({})
-    end,
+    opts = { keys = "etovxqpdygfblzhckisuran" },
     keys = {
       {
-        "f",
-        "<cmd>lua require'hop'.hint_char1()<cr>",
-        mode = "n",
-        noremap = true,
-        silent = true,
-      },
-      {
-        "t",
-        "<cmd>HopPattern<CR>",
+        "<leader>t",
+        "<cmd>HopChar1<CR>",
         mode = "n",
         noremap = true,
         silent = true,

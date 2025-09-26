@@ -1,13 +1,23 @@
 return {
   {
     "akinsho/bufferline.nvim",
+    version = false,
+
     dependencies = { "nvim-tree/nvim-web-devicons" },
+    -- after = "catppuccin",
     init = function()
-      local bufline = require("catppuccin.groups.integrations.bufferline")
+      local bufline = require("catppuccin.special.bufferline")
       function bufline.get()
         return bufline.get_theme()
       end
     end,
+
+    -- config = function()
+    --   require("bufferlinex").setup({
+    --     highlights = require("catppuccin.special.bufferline").get_theme(),
+    --   })
+    -- end,
+
     keys = {
       {
         "<Tab>",
@@ -28,6 +38,7 @@ return {
     -- vim.keymap.set("n", "<S-Tab>", ":BufferLineCyclePrev<CR>")
 
     opts = {
+
       options = {
         always_show_bufferline = true,
         buffer_close_icon = "",
